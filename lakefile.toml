@@ -1,0 +1,6 @@
+name = "constantDomainLogic"
+version = "0.1.0"
+defaultTargets = ["BQL"]
+
+[[lean_lib]]
+name = "BQL"
