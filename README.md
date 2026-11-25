@@ -1,6 +1,6 @@
-# Constant-Domain Basic First-Order Logic
+# Constant Domain Basic First-Order Logic
 
-This Lean 4 library formalizes constant-domain basic first-order logic (BQL<sub>CD</sub>) and its reflexive-root variant (BQL<sub>CD</sub><sup>r</sup>). Both use transitive Kripke frames. Every world in a model shares one nonempty domain of individuals, so quantifiers range over the same objects at every world. A world forces an implication A → B when every accessible world that forces A also forces B. [Kripke semantics](BQL/Semantics.lean)
+This Lean 4 library formalizes constant domain basic first-order logic (BQL<sub>CD</sub>) and its reflexive-root variant (BQL<sub>CD</sub><sup>r</sup>). Both use transitive Kripke frames. Every world in a model shares one nonempty domain of individuals, so quantifiers range over the same objects at every world. A world forces an implication A → B when every accessible world that forces A also forces B. [Kripke semantics](BQL/Semantics.lean)
 
 The two logics differ in where they test consequence. Basic logic tests it at every world. The reflexive-root variant tests it at worlds that can access themselves. At such a world, A and A → B together entail B. Its successors can still be irreflexive, which is why the natural deduction calculus restricts conditional proof. The two calculi prove the same sentences from empty premises in a language with a constant. [Natural deduction](BQL/Deduction.lean) · [Comparison theorem](BQL/Comparison.lean) · [Two-world counterexample](BQL/Examples.lean)
 
