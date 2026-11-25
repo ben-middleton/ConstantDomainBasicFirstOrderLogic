@@ -6,6 +6,12 @@ The two logics differ in where they test consequence. Basic logic tests it at ev
 
 The main theorem for the reflexive-root calculus is `BQL.adequate`. It proves `Derivable Γ a ↔ Entails Γ a` for any set of sentence premises and any base signature, including one without constants. The library follows Ben Middleton’s *Binary Kripke Semantics for a Strong Logic for Naive Truth* (arXiv:2001.00936v4). [Soundness and completeness](BQL/Parameters.lean) · [Paper on arXiv](https://arxiv.org/abs/2001.00936v4)
 
+## Naive truth
+
+The naive truth theory NT has a Kripke model for the reflexive-root calculus whose domain is the standard natural numbers. Every world satisfies curried induction and the Tarski biconditional T(⌜A⌝) ↔ A for every sentence A, including sentences that contain the truth predicate T. Here ⌜A⌝ denotes the numeral for the Gödel code of A. [Theory and standard model](BQL/NaiveTruth.lean)
+
+NT is **ω-consistent**. If NT proves every numeral instance of A(x), adding ∀x A(x) to NT preserves consistency. If NT proves ∃x A(x), at least one numeral instance of A(x) can be added consistently. NT also remains nontrivial under the **ω-rule**. Even when proofs may infer ∀x A(x) from all its numeral instances, they cannot derive ⊥. [ω-consistency](BQL/NaiveTruth.lean) · [Closure under the ω-rule](BQL/Consequences.lean)
+
 ## Build and inspect
 
 The project uses Lean 4.19.0 and its bundled standard library. From this directory, run
